@@ -51,8 +51,8 @@ test('change reflected in different dependency chain', function (t) {
   let exampleDeps  = di.create("ExampleDeps")
   let exampleDeps2 = di.create("ExampleDeps")
   t.ok(exampleDeps.alive)
-  t.equal(exampleDeps.attributeFromDep, "FooBarBaz")
-  t.equal(exampleDeps2.attributeFromDep, "FooBarBaz")
+  t.equal(exampleDeps.attributeFromDep, "Pillow")
+  t.equal(exampleDeps2.attributeFromDep, "Pillow")
   exampleDeps.attributeFromDep = "Staircase";
   t.equal(exampleDeps.attributeFromDep, "Staircase")
   t.equal(exampleDeps2.attributeFromDep, "Staircase")
