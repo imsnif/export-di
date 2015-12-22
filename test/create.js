@@ -26,11 +26,10 @@ test('create two instances of module', function (t) {
   t.notEqual(example.firstArg, example2.firstArg)
 })
 
-test('create two instances of module', function (t) {
+test('create module from nested library', function (t) {
   t.plan(3)
   let di = new Container(`${__dirname}/lib`)
-  let example = di.create("Example", "foo", "bar")
-  let example2 = di.create("Example", "baz")
+  let example = di.create("anotherlib/Example", "foo", "bar")
   t.ok(example.alive)
   t.ok(example2.alive)
   t.notEqual(example.firstArg, example2.firstArg)

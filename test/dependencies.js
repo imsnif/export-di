@@ -23,5 +23,5 @@ test('create module with nested dependencies', function (t) {
   let example = di.create("ExampleNestedDeps")
   t.ok(example.alive)
   t.equal(example.argFromDirectDep, "Foo")
-  t.equal(example.argFromNestedDep, "Bar")
+  t.equal(example.argFromNestedDep, "FooBarBaz")
 })
