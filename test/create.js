@@ -1,5 +1,7 @@
 import Container from '../index.js';
 
+import test from 'tape';
+
 test('create module', function (t) {
   t.plan(1)
   let di = new Container(`${__dirname}/lib`)
@@ -27,10 +29,8 @@ test('create two instances of module', function (t) {
 })
 
 test('create module from nested library', function (t) {
-  t.plan(3)
+  t.plan(1)
   let di = new Container(`${__dirname}/lib`)
   let example = di.create("anotherlib/Example", "foo", "bar")
   t.ok(example.alive)
-  t.ok(example2.alive)
-  t.notEqual(example.firstArg, example2.firstArg)
 })

@@ -1,5 +1,7 @@
 import Container from '../index.js';
 
+import test from 'tape';
+
 test('create module as singleton', function (t) {
   t.plan(1)
   let di = new Container(`${__dirname}/lib`)
@@ -20,7 +22,7 @@ test('create two singleton instances', function (t) {
   t.plan(1)
   let di = new Container(`${__dirname}/lib`)
   let example = di.singleton("Example", "foo", "bar")
-  t.throws(di.singleton("Example", "baz"))
+  t.throws(di.singleton.bind(di, "Example", "baz"))
 })
 
 test('get singleton instance from subsequent creates', function (t) {
@@ -38,7 +40,7 @@ test('singleton as dependency', function (t) {
   let di = new Container(`${__dirname}/lib`)
   di.singleton("Dependency", "Pillow")
   let exampleDeps = di.create("ExampleDeps")
-  t.ok(example.alive)
+  t.ok(exampleDeps.alive)
   t.equal(exampleDeps.attributeFromDep, "Pillow")
 })
 
@@ -48,10 +50,10 @@ test('change reflected in different dependency chain', function (t) {
   di.singleton("Dependency", "Pillow")
   let exampleDeps  = di.create("ExampleDeps")
   let exampleDeps2 = di.create("ExampleDeps")
-  t.ok(example.alive)
+  t.ok(exampleDeps.alive)
   t.equal(exampleDeps.attributeFromDep, "FooBarBaz")
   t.equal(exampleDeps2.attributeFromDep, "FooBarBaz")
-  exampleDeps.changeAttributeonDep("Staircase")
+  exampleDeps.attributeFromDep = "Staircase";
   t.equal(exampleDeps.attributeFromDep, "Staircase")
   t.equal(exampleDeps2.attributeFromDep, "Staircase")
 })

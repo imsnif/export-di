@@ -1,24 +1,26 @@
 import Container from '../index.js';
 
+import test from 'tape';
+
 test('create module with dependencies', function (t) {
   t.plan(2)
   let di = new Container(`${__dirname}/lib`)
   let exampleDeps = di.create("ExampleDeps")
-  t.ok(example.alive)
-  t.equal(example.attributeFromDep, "FooBarBaz")
+  t.ok(exampleDeps.alive)
+  t.equal(exampleDeps.attributeFromDep, "FooBarBaz")
 })
 
 test('create module with dependencies and arguments', function (t) {
   t.plan(3)
   let di = new Container(`${__dirname}/lib`)
   let exampleDeps = di.create("ExampleDeps", "Peanuts")
-  t.ok(example.alive)
-  t.equal(example.attributeFromDep, "FooBarBaz")
-  t.equal(example.firstArg, "Peanuts")
+  t.ok(exampleDeps.alive)
+  t.equal(exampleDeps.attributeFromDep, "FooBarBaz")
+  t.equal(exampleDeps.firstArg, "Peanuts")
 })
 
 test('create module with nested dependencies', function (t) {
-  t.plan(1)
+  t.plan(3)
   let di = new Container(`${__dirname}/lib`)
   let example = di.create("ExampleNestedDeps")
   t.ok(example.alive)

@@ -4,10 +4,10 @@ import { EventEmitter } from 'events';
 
 export const dependencies = [ "NestedDependency" ]
 export default class ExampleNestedDeps extends EventEmitter {
-  constructor(nestedDependency) {
+  constructor(NestedDependency) {
     super()
     this._alive = true
-    this._dependency = nestedDependency
+    this._dependency = new NestedDependency()
   }
   get alive() {
     return this._alive

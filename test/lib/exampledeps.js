@@ -4,11 +4,11 @@ import { EventEmitter } from 'events';
 
 export const dependencies = [ "Dependency" ]
 export default class ExampleDeps extends EventEmitter {
-  constructor(dependency, firstArg) {
+  constructor(Dependency, firstArg) {
     super()
     this._alive = true
     this._firstArg = firstArg
-    this._dependency = dependency
+    this._dependency = new Dependency()
   }
   get alive() {
     return this._alive
@@ -18,5 +18,10 @@ export default class ExampleDeps extends EventEmitter {
   }
   get firstArg() {
     return this._firstArg;
+  }
+  set attributeFromDep(value) {
+    if (value) {
+      this._dependency.myArg = value
+    }
   }
 }

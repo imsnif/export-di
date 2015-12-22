@@ -11,4 +11,9 @@ export default class Dependency extends EventEmitter {
   get myArg() {
     return this._myArg;
   }
+  set myArg(value) {
+    if (value) {
+      this._myArg = value
+    }
+  }
 }

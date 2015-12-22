@@ -4,16 +4,16 @@ import { EventEmitter } from 'events';
 
 export const dependencies = [ "Dependency" ]
 export default class Dependency extends EventEmitter {
-  constructor(dependency) {
+  constructor(Dependency) {
     super()
     this._alive = true
     this._myArg = "Foo"
-    this._childArg = dependency.myArg
+    this._child = new Dependency()
   }
   get myArg() {
     return this._myArg;
   }
   get childArg() {
-    return this._childArg;
+    return this._child.myArg;
   }
 }
