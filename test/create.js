@@ -35,20 +35,3 @@ test('create two instances of module', function (t) {
   t.ok(example2.alive)
   t.notEqual(example.firstArg, example2.firstArg)
 })
-
-test('create module with dependencies', function (t) {
-  t.plan(2)
-  let di = new Container(`${__dirname}/lib`)
-  let exampleDeps = di.create("ExampleDeps")
-  t.ok(example.alive)
-  t.equal(example.attributeFromDep, "FooBarBaz")
-})
-
-test('create module with dependencies and arguments', function (t) {
-  t.plan(3)
-  let di = new Container(`${__dirname}/lib`)
-  let exampleDeps = di.create("ExampleDeps", "Peanuts")
-  t.ok(example.alive)
-  t.equal(example.attributeFromDep, "FooBarBaz")
-  t.equal(example.firstArg, "Peanuts")
-})
