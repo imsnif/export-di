@@ -1,1 +1,1 @@
-module.exports = require("./lib/container.js")
+module.exports = require("./dist/container.js")
