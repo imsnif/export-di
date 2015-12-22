@@ -4,7 +4,7 @@
   "description": "Minimalist DI container focused on exports",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.js",
+    "test": "babel-tape-runner test/*.js",
     "build": "babel ./lib -d dist"
   },
   "keywords": [
