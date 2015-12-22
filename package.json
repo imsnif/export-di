@@ -1,0 +1,20 @@
+{
+  "name": "export-di",
+  "version": "0.0.1",
+  "description": "Minimalist DI container focused on exports",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "keywords": [
+    "di",
+    "es6",
+    "es2015",
+    "export"
+  ],
+  "author": "Aram Drevekenin",
+  "license": "MIT",
+  "dependencies": {
+    "tape": "^4.2.2"
+  }
+}
