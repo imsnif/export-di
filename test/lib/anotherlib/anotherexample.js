@@ -2,12 +2,12 @@
 
 import { EventEmitter } from 'events';
 
-export default class Example extends EventEmitter {
+export default class AnotherExample extends EventEmitter {
   constructor(firstArg, secondArg) {
     super()
     this._alive = true
-    this._firstArg = firstArg || "clown"
-    this._secondArg = secondArg || "pickUpTruck"
+    this._firstArg = firstArg || "octopus"
+    this._secondArg = secondArg || "elephant"
   }
   get alive() {
     return this._alive;
