@@ -53,8 +53,9 @@ Example:
 
 
 ## Installation
-TODO
-
+```
+npm install export-di
+```
 ## Usage
 
 The DI constructor accepts a directory path as its argument. It will auto-require all folders in this path, injecting their dependencies and creating singletons as needed.
