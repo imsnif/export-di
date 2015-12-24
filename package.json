@@ -1,6 +1,6 @@
 {
   "name": "export-di",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dependency Injection Container for Node.js based on ES2015 exports",
   "main": "index.js",
   "scripts": {
@@ -29,5 +29,9 @@
       "es2015",
       "stage-2"
     ]
+  },
+  "repository" : { 
+    "type": "git",
+    "url": "https://github.com/imsnif/export-di"
   }
 }
