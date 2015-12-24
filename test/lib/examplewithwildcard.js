@@ -2,7 +2,7 @@
 
 import { EventEmitter } from 'events';
 
-export const dependencies = [ "Dependency", "anotherlib/*" ]
+export const dependencies = [ "Dependency", "anotherlib" ]
 export default class ExampleWithWildcard extends EventEmitter {
   constructor(Dependency, anotherLib) {
     super()
