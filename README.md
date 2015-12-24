@@ -55,6 +55,7 @@ Example:
 ## Installation
 ```
 npm install export-di
+npm build
 ```
 ## Usage
 
