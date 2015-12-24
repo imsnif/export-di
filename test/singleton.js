@@ -70,3 +70,16 @@ test('singleton declared on module', function (t) {
   t.equal(exampleDeps.firstArg, "Staircase")
   t.equal(exampleDeps2.firstArg, "Staircase")
 })
+
+test('nested singleton declared on module', function (t) {
+  t.plan(5)
+  let di = new Container(`${__dirname}/lib`)
+  let exampleDeps  = di.create("ExampleDepsNestedSingleton")
+  let exampleDeps2 = di.create("ExampleDepsNestedSingleton")
+  t.ok(exampleDeps.alive)
+  t.equal(exampleDeps.firstArg, "hoverboard")
+  t.equal(exampleDeps2.firstArg, "hoverboard")
+  exampleDeps.firstArg = "Staircase";
+  t.equal(exampleDeps.firstArg, "Staircase")
+  t.equal(exampleDeps2.firstArg, "Staircase")
+})
