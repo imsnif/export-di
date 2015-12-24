@@ -73,8 +73,8 @@ Example:
 ```javascript
 export const dependencies = [ 
   "library/ClassName", 
-    "ClassNameInRootLib", 
-    "anotherLibrary/yetAnotherLibrary/AnotherClassName" 
+  "ClassNameInRootLib", 
+  "anotherLibrary/yetAnotherLibrary/AnotherClassName" 
 ]
 export default class FineClass () {
   constructor(ClassName, ClassNameInRootLib, AnotherClassName) {
@@ -97,15 +97,15 @@ export class dependencies = [ /* some dependencies */ ]
 export const singleton = true
 export default class MyAwesomeSingleton extends EventEmitter () {
   constructor(/* my dependencies */) {
-      super()
-      this._count = 0
-    }
-    get count() {
-      return this._count
-    }
-    increaseCount() {
-      this.count += 1
-    }
+    super()
+    this._count = 0
+  }
+  get count() {
+    return this._count
+  }
+  increaseCount() {
+    this.count += 1
+  }
 }
 
 /* lib/my-awesome-class.js */
@@ -113,15 +113,15 @@ export default class MyAwesomeSingleton extends EventEmitter () {
 export class dependencies = [ "MyAwesomeSingleton" ]
 export default class MyAwesomeClass extends EventEmitter () {
   constructor(MyAwesomeSingleton) {
-      super()
-      this._jointCounter = new MyAwesomeSingleton()
-    }
-    get count() {
-      return this._jointCounter.count
-    }
-    increaseCount() {
-      this._jointCounter.increaseCount()
-    }
+    super()
+    this._jointCounter = new MyAwesomeSingleton()
+  }
+  get count() {
+    return this._jointCounter.count
+  }
+  increaseCount() {
+    this._jointCounter.increaseCount()
+  }
 }
 
 /* app.js */
@@ -157,12 +157,12 @@ lib/
 export const dependencies = [ "anotherLib" ]
 export default class SomeClass extends EventEmitter {
   constructor(anotherLib) {
-      super()
-      this.anotherExample = new anotherLib.AnotherExample()
-      this.example = new anotherLib.AnotherExample("some", "args", "because", "why", "not?")
-      this.singleton = new anotherLib.Singleton()
-      this.yetAnotherExample = new anotherLib.yetAnotherLib.YetanotherExample()
-    }
+    super()
+    this.anotherExample = new anotherLib.AnotherExample()
+    this.example = new anotherLib.AnotherExample("some", "args", "because", "why", "not?")
+    this.singleton = new anotherLib.Singleton()
+    this.yetAnotherExample = new anotherLib.yetAnotherLib.YetanotherExample()
+  }
 }
 ```
 
