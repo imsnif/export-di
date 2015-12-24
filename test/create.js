@@ -19,9 +19,10 @@ test('create module with args', function (t) {
 })
 
 test('proper error', function (t) {
-  t.plan(1)
+  t.plan(2)
   let di = new Container(`${__dirname}/lib`)
   t.throws(di.create.bind(di, "NonExistentComponent"))
+  t.throws(di.create.bind(di, "anotherLib/NonExistentComponent"))
 })
 
 test('create two instances of module', function (t) {
