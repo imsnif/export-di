@@ -1,6 +1,6 @@
 {
   "name": "export-di",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dependency Injection Container for Node.js based on ES2015 exports",
   "main": "index.js",
   "scripts": {
