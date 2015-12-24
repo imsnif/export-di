@@ -57,3 +57,16 @@ test('change reflected in different dependency chain', function (t) {
   t.equal(exampleDeps.attributeFromDep, "Staircase")
   t.equal(exampleDeps2.attributeFromDep, "Staircase")
 })
+
+test('singleton declared on module', function (t) {
+  t.plan(5)
+  let di = new Container(`${__dirname}/lib`)
+  let exampleDeps  = di.create("ExampleDepsSingleton")
+  let exampleDeps2 = di.create("ExampleDepsSingleton")
+  t.ok(exampleDeps.alive)
+  t.equal(exampleDeps.firstArg, "hoverboard")
+  t.equal(exampleDeps2.firstArg, "hoverboard")
+  exampleDeps.firstArg = "Staircase";
+  t.equal(exampleDeps.firstArg, "Staircase")
+  t.equal(exampleDeps2.firstArg, "Staircase")
+})
