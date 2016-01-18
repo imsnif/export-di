@@ -2,7 +2,7 @@
   "name": "export-di",
   "version": "1.0.3",
   "description": "Dependency Injection Container for Node.js based on ES2015 exports",
-  "main": "index.js",
+  "main": "dist/container.js",
   "scripts": {
     "test": "babel-tape-runner test/*.js",
     "build": "babel ./lib -d dist",
